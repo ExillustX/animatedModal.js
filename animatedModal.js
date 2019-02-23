@@ -36,7 +36,7 @@
 
     }, options);
 
-    var closeBt = $('#' + settings.modalTarget).find('[data-modal-close=' + settings.modalTarget + ']');
+    var closeBt = $('#' + settings.modalTarget).find('[data-modal-close]');
 
     //console.log(closeBt)
 
