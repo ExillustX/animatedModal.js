@@ -24,8 +24,8 @@
             color: '#39BEB9', 
             opacityIn:'1',  
             opacityOut:'0', 
-            animatedIn:'zoomIn',
-            animatedOut:'zoomOut',
+            animatedIn:'fadeIn',
+            animatedOut:'fadeOut',
             animationDuration:'.6s',
             // Callbacks
             beforeOpen: function() {},           
