@@ -26,8 +26,7 @@
             opacityOut:'0', 
             animatedIn:'zoomIn',
             animatedOut:'zoomOut',
-            animationDuration:'.6s', 
-            overflow:'auto', 
+            animationDuration:'.6s'
             // Callbacks
             beforeOpen: function() {},           
             afterOpen: function() {}, 
@@ -58,7 +57,6 @@
             'top':settings.top,
             'left':settings.left,
             'background-color':settings.color,
-            'overflow-y':settings.overflow,
             'z-index':settings.zIndexOut,
             'opacity':settings.opacityOut,
             '-webkit-animation-duration':settings.animationDuration,
@@ -71,7 +69,6 @@
 
         modal.click(function(event) {       
             event.preventDefault();
-            $('body, html').css({'overflow':'hidden'});
             if (href == idConc) {
                 if (id.hasClass(settings.modalTarget+'-off')) {
                     id.removeClass(settings.animatedOut);
@@ -92,7 +89,6 @@
 
         closeBt.click(function(event) {
             event.preventDefault();
-            $('body, html').css({'overflow':'auto'});
 
             settings.beforeClose(); //beforeClose
             if (id.hasClass(settings.modalTarget+'-on')) {
