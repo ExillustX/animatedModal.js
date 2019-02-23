@@ -1,5 +1,5 @@
 /*=========================================
- * animatedModal.js: Version 1.0
+ * animatedModal.js: Version 1.1
  * author: João Pereira
  * website: https://joaopereira.pt
  * email: joaopereirawd@gmail.com
