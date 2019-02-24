@@ -36,18 +36,18 @@
       // Callbacks
       beforeOpen: function() {
         $('html').css('overflowY', 'scroll');
+        $('html').add(closeBt).css('marginRight', '0');
         $('#' + modalTarget).css('overflowY', 'hidden');
-        $(closeBt).css('marginRight', '0');
       },
       afterOpen: function() {
         $('html').css('overflowY', 'hidden');
+        $('html').add(closeBt).css('marginRight', getScrollBarWidth());
         $('#' + modalTarget).css('overflowY', 'scroll');
-        $(closeBt).css('marginRight', getScrollBarWidth());
       },
       beforeClose: function() {
         $('html').css('overflowY', 'scroll');
+        $('html').add(closeBt).css('marginRight', '0');
         $('#' + modalTarget).css('overflowY', 'hidden');
-        $(closeBt).css('marginRight', '0');
       },
       afterClose: function() {}
 
