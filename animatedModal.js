@@ -11,7 +11,14 @@
   $.fn.animatedModal = function(options) {
     var modal = $(this);
     var modalTarget = modal.attr('href').replace('#', '');
-    //Defaults
+    // Defaults
+    var closeBt = $('#' + modalTarget).find('[data-modal-close]');
+    function getScrollBarWidth() {
+      var $outer = $('<div>').css({ visibility: 'hidden', width: 100, overflow: 'scroll' }).appendTo('body'),
+        widthWithScroll = $('<div>').css({ width: '100%' }).appendTo($outer).outerWidth();
+      $outer.remove();
+      return 100 - widthWithScroll;
+    }
     var settings = $.extend({
       modalTarget: modalTarget,
       position: 'fixed',
@@ -30,22 +37,23 @@
       beforeOpen: function() {
         $('html').css('overflowY', 'scroll');
         $('#' + modalTarget).css('overflowY', 'hidden');
+        $(closeBt).css('marginRight', '0');
       },
       afterOpen: function() {
         $('html').css('overflowY', 'hidden');
         $('#' + modalTarget).css('overflowY', 'scroll');
+        $(closeBt).css('marginRight', getScrollBarWidth());
       },
       beforeClose: function() {
         $('html').css('overflowY', 'scroll');
         $('#' + modalTarget).css('overflowY', 'hidden');
+        $(closeBt).css('marginRight', '0');
       },
       afterClose: function() {}
 
 
 
     }, options);
-
-    var closeBt = $('#' + settings.modalTarget).find('[data-modal-close]');
 
     //console.log(closeBt)
 
