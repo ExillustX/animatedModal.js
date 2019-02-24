@@ -10,10 +10,10 @@
 
   $.fn.animatedModal = function(options) {
     var modal = $(this);
-
+    var modalTarget = modal.attr('href').replace('#', '');
     //Defaults
     var settings = $.extend({
-      modalTarget: modal.attr('href').replace('#', ''),
+      modalTarget: modalTarget,
       position: 'fixed',
       width: '100%',
       height: '100%',
@@ -27,9 +27,18 @@
       animatedOut: 'fadeOut',
       animationDuration: '.2s',
       // Callbacks
-      beforeOpen: function() {},
-      afterOpen: function() {},
-      beforeClose: function() {},
+      beforeOpen: function() {
+        $('html').css('overflowY', 'scroll');
+        $('#' + modalTarget).css('overflowY', 'hidden');
+      },
+      afterOpen: function() {
+        $('html').css('overflowY', 'hidden');
+        $('#' + modalTarget).css('overflowY', 'scroll');
+      },
+      beforeClose: function() {
+        $('html').css('overflowY', 'scroll');
+        $('#' + modalTarget).css('overflowY', 'hidden');
+      },
       afterClose: function() {}
 
 
