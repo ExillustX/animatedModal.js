@@ -120,7 +120,7 @@
     });
 
     function afterClose() {
-      id.css({ 'z-index': settings.zIndexOut });
+      id.css({ 'opacity': settings.opacityOut, 'z-index': settings.zIndexOut });
       settings.afterClose(); //afterClose
     }
 
